@@ -3,4 +3,4 @@ target: decode-fuzz
 cmds:
   - cmd: /src/mayhem/fuzz_decode.py
     libfuzzer: true
-    env: { "LD_PRELOAD": "/usr/local/lib/python3.9/dist-packages/asan_with_fuzzer.so", "LD_LIBRARY_PATH": "/src/pyext/xedkit/lib/" }
+    env: { "LD_PRELOAD": "/usr/local/lib/python3.9/dist-packages/ubsan_with_fuzzer.so", "LD_LIBRARY_PATH": "/src/pyext/xedkit/lib/" }
