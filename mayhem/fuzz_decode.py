@@ -31,8 +31,9 @@ def TestOneInput(data):
             xed.dis32(asm_source)
         else:
             xed.dis64(asm_source)
-    except SystemError:
-        return -1
+    except SystemError as e:
+        if 'with an error' not in str(e):
+            raise
 
 
 def main():

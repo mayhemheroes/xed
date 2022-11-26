@@ -13,4 +13,4 @@ RUN ln -s ../obj/wkit xedkit
 RUN rm /usr/bin/x86_64-linux-gnu-gcc && ln -s /usr/bin/clang /usr/bin/x86_64-linux-gnu-gcc
 RUN CC="/usr/bin/clang" CFLAGS="-fsanitize=fuzzer-no-link" CXX="/usr/bin/clang++" CXXFLAGS="-fsanitize=fuzzer-no-link" python3 setup.py install
 
-CMD LD_PRELOAD=/usr/local/lib/python3.9/dist-packages/asan_with_fuzzer.so LD_LIBRARY_PATH=/src/pyext/xedkit/lib/ /src/mayhem/fuzz_decode.py -detect_leaks=0
+CMD LD_PRELOAD=/usr/local/lib/python3.9/dist-packages/ubsan_with_fuzzer.so LD_LIBRARY_PATH=/src/pyext/xedkit/lib/ /src/mayhem/fuzz_decode.py
